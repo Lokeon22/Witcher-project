@@ -1,0 +1,283 @@
+@font-face {
+  font-family: "Witcher";
+  src: url(./font/Thewitcher-jnOj.ttf);
+}
+
+:root {
+  --font-witcher: "Witcher", sans-serif;
+  --color-1: #c70a0a;
+  --color-2: #a70d0d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+.logo {
+  z-index: 10;
+}
+
+.menu-icon {
+  z-index: 10;
+}
+
+.showcase {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+  color: white;
+  background-color: rgb(31, 29, 29);
+  z-index: 2;
+  transition: 0.5s;
+}
+
+.showcase.active {
+  right: 300px;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(73, 65, 65, 0.5);
+  mix-blend-mode: overlay;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 55px;
+  z-index: 1000;
+}
+
+.second-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-content {
+  text-align: right;
+  margin-bottom: 120px;
+  opacity: 0;
+}
+
+.title-content h2 {
+  font-family: var(--font-witcher);
+  font-size: 5rem;
+  line-height: 1em;
+}
+
+.title-content h3 {
+  font-family: var(--font-witcher);
+  color: var(--color-2);
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 1em;
+}
+
+.social-desktop {
+  padding: 60px;
+  z-index: 2;
+}
+
+.social-desktop ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style-type: none;
+}
+
+.social-desktop img {
+  width: 20px;
+  height: 20px;
+}
+
+.social-desktop li a {
+  display: block;
+  transition: 0.5s;
+}
+
+.social-desktop li a:hover {
+  transform: translateX(5px);
+}
+
+.footer {
+  display: flex;
+  align-items: flex-end;
+  font-family: var(--font-witcher);
+  font-size: 0.8rem;
+  margin-right: 30px;
+  z-index: 10;
+}
+
+.footer span {
+  color: var(--color-2);
+}
+
+.menu-icon {
+  width: 60px;
+  height: 60px;
+  background: url(./images/icon.svg);
+  background-repeat: no-repeat;
+  background-size: 38px;
+  background-position: center;
+  cursor: pointer;
+}
+
+/* menu mobile */
+
+.menu-icon.active {
+  background: url(./images/close.svg);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: center;
+}
+
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu ul {
+  position: relative;
+  list-style: none;
+  z-index: 1;
+}
+
+.menu ul li {
+  margin-top: 5px;
+}
+
+.menu ul li a {
+  font-family: var(--font-witcher);
+  font-size: 1.5rem;
+  color: #111;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+
+.menu ul li a:hover {
+  color: var(--color-1);
+  letter-spacing: 4px;
+}
+
+/* socials-mobile */
+
+.social-mobile.active {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.social-mobile img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+.social-mobile ul {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 180px;
+}
+
+.social-mobile ul li {
+  list-style: none;
+}
+
+.social-mobile li a {
+  display: block;
+  transition: 0.5s;
+}
+
+.social-mobile li a:hover {
+  transform: translateY(-5px);
+}
+
+.fadi {
+  padding: 60px;
+  opacity: 1;
+  transition: 2s;
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    padding: 25px;
+  }
+
+  .logo img {
+    width: 70px;
+    height: 35px;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+    background-size: 25px;
+    background-position: center;
+  }
+
+  .title-content {
+    margin-top: 250px;
+    padding: 25px;
+  }
+
+  .title-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .title-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .title-content img {
+    display: block !important;
+    width: 100px;
+    height: 80px;
+    position: absolute;
+    right: 40px;
+    top: 350px;
+    filter: invert(60%);
+    z-index: -1;
+  }
+
+  .social-desktop {
+    display: none;
+  }
+
+  .footer {
+    display: none;
+  }
+}
