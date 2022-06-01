@@ -51,7 +51,7 @@
           </div>
           <div data-special="0" class="profile-inner">
             <div class="profile-img">
-              <img src="./images/characters/geralt.jpg" width="450" height="580">
+              <img src="./images/characters/geralt.jpg" width="450" height="580" data-tilt="">
               <div class="profile-text">
                 <p>Geralt</p>
                 <p> de Rívia</p>
@@ -61,8 +61,8 @@
           </div>
 
           <div data-special="1" class="profile-inner active-profile">
-            <div class="profile-img" data-tilt>
-              <img src="./images/characters/triss.jpeg" width="450" height="580">
+            <div class="profile-img">
+              <img src="./images/characters/triss.jpeg" width="450" height="580" data-tilt>
               <div class="profile-text">
                 <p>Triss</p>
                 <p>Merigold</p>
@@ -83,8 +83,8 @@
           </div>
 
           <div data-special="3" class="profile-inner active-profile">
-            <div class="profile-img" data-tilt>
-              <img src="./images/characters/ciri.jpg" width="450" height="580">
+            <div class="profile-img">
+              <img src="./images/characters/ciri.jpg" width="450" height="580" data-tilt>
               <div class="profile-text">
                 <p>Ciri</p>
                 <p>Cirilla Elen</p>
@@ -105,8 +105,8 @@
           </div>
 
           <div data-special="5" class="profile-inner active-profile">
-            <div class="profile-img" data-tilt>
-              <img src="./images/characters/vesemir.png" width="450" height="580">
+            <div class="profile-img">
+              <img src="./images/characters/vesemir.png" width="450" height="580" data-tilt>
               <div class="profile-text">
                 <p>Vesemir</p>
                 <p>Witcher</p>
@@ -159,10 +159,20 @@
 
   <script type="text/javascript" src="./js/vanila-tilt.js"></script>
   <script type="text/javascript">
-    VanillaTilt.init(document.querySelector(".profile-img img"), {
-      max: 25,
-      speed: 400
-    });
+    const serv = document.querySelectorAll('.profile-img img');
+    serv.forEach((item) => {
+      if (window.screen.width <= 1024 && window.screen.height >= 768) {
+        VanillaTilt.init(document.querySelector(".profile-img img"), {
+          max: 0,
+          speed: 0
+        });
+      } else {
+        VanillaTilt.init(document.querySelector(".profile-img img"), {
+          max: 25,
+          speed: 400
+        });
+      }
+    })
     VanillaTilt.init(document.querySelectorAll(".your-element"));
   </script>
   <script src="./script.js"></script>

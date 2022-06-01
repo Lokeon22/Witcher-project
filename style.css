@@ -235,7 +235,7 @@ a {
   transition: 2s;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 825px) {
   .container {
     padding: 25px;
   }
