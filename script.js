@@ -1,7 +1,9 @@
+import initModal from "./js/modal.js";
+
 const menu = document.querySelector(".menu-icon");
 let title = document.querySelector(".title-content");
 
-function sumir() {
+async function sumir() {
   setTimeout(() => {
     title.classList.add("fadi");
   }, 1000);
@@ -15,4 +17,5 @@ menu.addEventListener("click", () => {
   social.classList.toggle("active");
 });
 
-window.onload = sumir();
+sumir();
+initModal();
