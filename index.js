@@ -3,7 +3,7 @@ import initModal from "./js/modal.js";
 const menu = document.querySelector(".menu-icon");
 let title = document.querySelector(".title-content");
 
-async function sumir() {
+function sumir() {
   setTimeout(() => {
     title.classList.add("fadi");
   }, 1000);
